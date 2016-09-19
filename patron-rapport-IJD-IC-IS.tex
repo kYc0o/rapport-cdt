@@ -10,17 +10,17 @@
 \newenvironment{notes}[0]{\color{blue}}{\color{black}}
 
 \title{\vskip 5cm {\huge
-    Rapport d'activité 
+    Rapport d'activit\'e
       %~\footnote{}
       %/ Rapport final
-      %~\footnote{Si l'année en cours est la deuxième année de contrat}
+      %~\footnote{Si l'ann\'ee en cours est la deuxi\`eme ann\'ee de contrat}
       \\
       D\'eveloppement open-source et maintenance d'un OS embarqu\'e pour l'Internet des objets
   }
 }
 \author{\large \sl \bf
   Francisco Javier Acosta Padilla \\
-  Ingénieur spécialiste
+  Ing\'enieur sp\'ecialiste
 }
 \date{
   Du 1 janvier 2016 au 26 septembre 2016
@@ -39,42 +39,41 @@
 \subsection{Introduction}
 
 
-Cette ADT a été lancée dans le cadre du projet de développement d'un système
+Cette ADT a \'et\'e lanc\'ee dans le cadre du projet de d\'eveloppement d'un syst\`eme
 d'exploitation pour l'internet des objets, RIOT.\\
 
-Le développement de RIOT a démarré en 2013 et compte à ce jour plus de 100 développeurs partout dans le monde.
-Ce projet est principalement soutenu par Inria, Freie Universität à Berlin et Hochschule für Angewandte Wissenschaften à Hamburg.
+RIOT a commenc� en 2013, fond\'e par INRIA, Freie Universit\"at Berlin et Hochschule f\"ur Angewandte Wissenschaften Hamburg, et compte \`a ce jour plus de 120 contributeurs de code: des d\'eveloppeurs venant du monde entier.
 
 Le code source est disponible sur
 Github\footnote{\url{https://github.com/RIOT-OS/RIOT/}}, sous licence LGLPv2,
-qui permet à toute personne son utilisation, modification et distribution.
+qui permet \`a� toute personne son utilisation, modification et distribution.
 
-Ce code est essentiellement écrit en C et utilise l'outil
-Make pour la compilation. D'autres langages comme Python ou C++ sont également
-utilisés.
+Ce code est essentiellement \'ecrit en C et utilise l'outil
+Make pour la compilation. D'autres langages comme Python ou C++ sont \'egalement
+utilis\'es.
 
-RIOT cible les plateformes disposant de configurations matérielles très
-contraintes, c'est-à-dire des microcontrôleurs ayant quelques kilo-octets de
-mémoire RAM et flash, et sur lesquels des systèmes tels que Linux ou Windows 
-ne peuvent pas être utilisés. RIOT a été développé en suivant une architecture
-dite "micro-noyau" ce qui lui permet d'avoir une empreinte mémoire et une
-utilisation du processeur très faibles. RIOT s'appuie également sur un
-ordonnanceur déterministe et "tickless", ce qui lui garantit d'une part une très
-basse consommation énergétique et d'autres des capacités d'exécution de tâches
-en temps réel.\\
+RIOT cible les plateformes disposant de configurations mat\'erielles tr\`es
+contraintes, c'est-\`a-dire des microcontr\^oleurs ayant quelques kilo-octets de
+m\'emoire RAM et flash, et sur lesquels des syst\`emes tels que Linux ou Windows 
+ne peuvent pas \^etre utilis\'es. RIOT a \'et\'e d\'evelopp\'e en suivant une architecture
+dite "micro-noyau" ce qui lui permet d'avoir une empreinte m\'emoire et une
+utilisation du processeur tr\`es faibles. RIOT s'appuie \'egalement sur un
+ordonnanceur d\'eterministe et "tickless", ce qui lui garantit d'une part une tr\`es
+basse consommation \'energ\'etique et d'autres des capacit\'es d'ex\'ecution de t\^aches
+en temps r\'eel.\\
 
-Actuellement, RIOT supporte des microcontrôleurs 8, 16 et 32 bits, et des
+Actuellement, RIOT supporte des microcontr\^oleurs 8, 16 et 32 bits, et des
 architectures AVR (Atmel) et ARM (Atmel, STMicro, Texas Instruments).
 
 \subsection{Contexte scientifique}
 
-L'ADT se déroule au sein de l'équipe-projet INFINE (INFormatIon NEtworks) dont
+L'ADT se d\'eroule au sein de l'\'equipe-projet INFINE (INFormatIon NEtworks) dont
 la recherche s'articule autour de 3 axes principaux:
 
 \begin{enumerate}
 	\item Online Social Networks
 	\begin{itemize}
-		\item Recommandation et vie privée
+		\item Recommandation et vie priv\'ee
 	\end{itemize}
 	\item Traffic Offloading
 	\begin{itemize}
@@ -87,250 +86,248 @@ la recherche s'articule autour de 3 axes principaux:
 	\end{itemize}
 \end{enumerate}
 
-Cette ADT est donc concernée par ce troisème axe qui vise à proposer des
-protocoles réseau et des architectures optimisés et adaptés aux nouveaux
+Cette ADT est donc concern\'ee par ce trois\`eme axe qui vise \`a� proposer des
+protocoles r\'eseau et des architectures optimis\'es et adapt\'es aux nouveaux
 concepts de communication (e.g publish/subscribe, etc). Dans le cadre de
-l'internet des objets, le système d'exploitation RIOT est utilisé comme support
-logiciel\cite{RIOT-infocom} pour la mise en oeuvre des avancées liées à cet axe de recherche.
-En particulier, plusieurs thèmes sont explorés:
+l'internet des objets, le syst\`eme d'exploitation RIOT est utilis\'e comme support
+logiciel\cite{RIOT-infocom} pour la mise en oeuvre des avanc\'ees li\'ees \`a� cet axe de recherche.
+En particulier, plusieurs th\`emes sont explor\'es:
 \begin{itemize}
-    \item Le développement de protocoles IP tolérant les coupures réseau des LLN (Low
+    \item Le d\'eveloppement de protocoles IP tol\'erant les coupures r\'eseau des LLN (Low
 power and Lossy Networks),
-    \item Les réseaux ICN (Information Centric Networking)\cite{ICN-RIOT} dont le but est de
-traiter la localisation et la reproduction de contenu dans la pile réseau, sans
+    \item Les r\'eseaux ICN (Information Centric Networking)\cite{ICN-RIOT} dont le but est de
+traiter la localisation et la reproduction de contenu dans la pile r\'eseau, sans
 adressage IP,
-    \item Le suivi des évolutions des protocoles de la pile réseau discutées à l'IETF
+    \item Le suivi des \'evolutions des protocoles de la pile r\'eseau discut\'ees \`a� l'IETF
 (Internet Engineering Task Force)
 \end{itemize}
 
-Cette ADT doit aussi servir à intégrer les résultats de mes précédents travaux
-de recherches sur la mise jour de composants logiciels sur les dispositifs très
-contraints\cite{models-at-runtime}, en utilisant les protocoles réseaux sans fil de l'IoT (Internet
-Of Things), comme 802.15.4 ou LoRa (Long Range). On parle alors de mise-à-jour
+Cette ADT doit aussi servir \`a�int\'egrer les r\'esultats de mes pr\'ec\'edents travaux
+de recherches sur la mise jour de composants logiciels sur les dispositifs tr\`es
+contraints\cite{models-at-runtime}, en utilisant les protocoles r\'eseaux sans fil de l'IoT (Internet
+Of Things), comme 802.15.4 ou LoRa (Long Range). On parle alors de mise-\`a-jour
 "Over the Air" (OTA).
 
 
 
 \subsection{Objectifs de l'ADT}
 
-L'objectif principal de l'ADT est le développement et la maintenance du code de
-ce système d'exploitation ainsi que l'animation de sa communauté de
-développeurs.
-Plus précisément, ces objectifs sont les suivants :
+L'objectif principal de l'ADT est le d\'eveloppement et la maintenance du code de
+ce syst\`eme d'exploitation ainsi que l'animation de sa communaut\'e de
+d\'eveloppeurs.
+Plus pr\'ecis\'ement, ces objectifs sont les suivants :
 \begin{description}
     \item[Ajout de nouvelles plateformes :] RIOT supporte un grand nombre de
         plateformes
-        matérielles\footnote{\url{https://github.com/RIOT-OS/RIOT/wiki/RIOT-Platforms}},
-        cependant ce secteur est en perpétuelle évolution et de nouvelles plateformes
-        sont disponibles régulièrement. Pour promouvoir l'utilisation et la 
-        collaboration en la communauté de développeurs, les scientifiques, les 
-        industriels et les hobbyistes/makers, il est nécessaire de maintenir un effort 
-        pour suivre ces évolutions en ajoutant le support de ces nouvelles configurations.
+        mat\'erielles\footnote{\url{https://github.com/RIOT-OS/RIOT/wiki/RIOT-Platforms}},
+        cependant ce secteur est en perp\'etuelle \'evolution et de nouvelles plateformes
+        sont disponibles r\'eguli\`erement. Pour promouvoir l'utilisation et la 
+        collaboration en la communaut\'e de d\'eveloppeurs, les scientifiques, les 
+        industriels et les hobbyistes/makers, il est n\'ecessaire de maintenir un effort 
+        pour suivre ces \'evolutions en ajoutant le support de ces nouvelles configurations.
 
-    \item[Support des nouveaux protocoles réseau :] l'IETF discute régulièrement de
-        l'amélioration ou de la définition de nouveaux protocoles réseaux, en
+    \item[Support des nouveaux protocoles r\'eseau :] l'IETF discute r\'eguli\`erement de
+        l'am\'elioration ou de la d\'efinition de nouveaux protocoles r\'eseaux, en
         particulier pour l'IoT. Un des enjeux principaux de cette ADT est donc
-        d'implémenter ces nouveaux protocoles réseaux dans la pile protocolaire
-        logicielle de RIOT et de les tester en conditions réelles, par exemple en
-        utilisant les noeuds ouverts de la plateforme expérimentale IoT-LAB.
+        d'impl\'ementer ces nouveaux protocoles r\'eseaux dans la pile protocolaire
+        logicielle de RIOT et de les tester en conditions r\'eelles, par exemple en
+        utilisant les noeuds ouverts de la plateforme exp\'erimentale IoT-LAB.
 
-    \item[Mise à jour des composants logiciels de RIOT :] La mise à jour d'un système
+    \item[Mise \`a� jour des composants logiciels de RIOT :] La mise \`a� jour d'un syst\`eme
         d'exploitation et de ses composants logiciels est essentielle pour garantir sa
-        sécurité, corriger des bogues ou intégrer de nouvelles fonctionnalités. Dans le
-        cas d'un système embarqué IoT fortement contraint, ces mises à jour représentent
-        encore un défi technique très complexe: les réseaux sans-fil sont peu fiables et très bas débit,
-        les équipements n'ont pas d'interface utilisateur accessible à distance et
-        l'espace mémoire y est très limitée.
+        s\'ecurit\'e, corriger des bogues ou int\'egrer de nouvelles fonctionnalit\'es. Dans le
+        cas d'un syst\`eme embarqu\'e IoT fortement contraint, ces mises \`a� jour repr\'esentent
+        encore un d\'efi technique tr\`es complexe: les r\'eseaux sans-fil sont peu fiables et tr\`es bas d\'ebit,
+        les \'equipements n'ont pas d'interface utilisateur accessible \`a distance et
+        l'espace m\'emoire y est tr\`es limit\'ee.
 
-    \item[Revue de Code :] La revue de code consiste à vérifier que le code écrit par les
-        contributeurs de la communauté fonctionne correctement, n'introduit pas de
-        régression et qu'il respecte les conventions établies par les mainteneurs du
-        projet. Les vérifications fonctionnelles s'effectuent soit à distance dans un
-        environnement de test (appelé "testbed",  comme 
-        IoT-LAB\footnote{\url{https://www.iot-lab.info}}) ou directement sur le matériel 
-        pour lequel il a été développé.
+    \item[Revue de Code :] La revue de code consiste \`a� v\'erifier que le code \'ecrit par les
+        contributeurs de la communaut\'e fonctionne correctement, n'introduit pas de
+        r\'egression et qu'il respecte les conventions \'etablies par les mainteneurs du
+        projet. Les v\'erifications fonctionnelles s'effectuent soit \`a� distance dans un
+        environnement de test (appel\'e "testbed",  comme 
+        IoT-LAB\footnote{\url{https://www.iot-lab.info}}) ou directement sur le mat\'eriel 
+        pour lequel il a \'et\'e d\'evelopp\'e.
 \end{description}
 
 
 %\begin{notes}
-%  Contexte scientifique de l'équipe de recherche,
-%  sujet des travaux, état initial \texttt{avant l'année en cours} et objectifs.
+%  Contexte scientifique de l'\'equipe de recherche,
+%  sujet des travaux, \'etat initial \texttt{avant l'ann\'ee en cours} et objectifs.
 %  \\
 
-%  \textit{Cette partie fait écho aux trois premières sections
-%    de la demande d'ADT : \textbf{Introduction}, \textbf{Contexte : état des lieux et positionnement avant l'ADT} et \textbf{Objectifs de l'ADT}.}
+%  \textit{Cette partie fait \'echo aux trois premi\`eres sections
+%    de la demande d'ADT : \textbf{Introduction}, \textbf{Contexte : \'etat des lieux et positionnement avant l'ADT} et \textbf{Objectifs de l'ADT}.}
 %\end{notes}
 
 %%==============================================================================
 %%==============================================================================
-\section{Travaux réalisés}
+\section{Travaux r\'ealis\'es}
 
 
 \begin{description}
     \item[Ajout de nouvelles plateformes :] Pendant ces 8 mois d'ADT, j'ai 
-        ajouté dans RIOT le support d'une nouvelle plateforme ainsi qu'une 
-        nouvelle interface radio utilisée par plusieurs cartes IoT. Par 
-        ailleurs, j'ai proposé plusieurs corrections de bogues. Le détail de 
-        ces développement est le suivant:
+        ajout\'e dans RIOT le support d'une nouvelle plateforme ainsi qu'une 
+        nouvelle interface radio utilis\'ee par plusieurs cartes IoT. Par 
+        ailleurs, j'ai propos\'e plusieurs corrections de bogues. Le d\'etail de 
+        ces d\'eveloppement est le suivant:
         \begin{itemize}
-            \item Support de la plateforme Waspmote Pro de Libellium, basée 
-                sur un microcontrôleur AVR 8 bit : j'ai écrit le code pour 
-                supporter les périphériques de base (CPU, timers) et 
-                implémenter les capacités de colmmunication (interfaces UART,
+            \item Support de la plateforme Waspmote Pro de Libellium, bas\'ee 
+                sur un microcontr\^oleur AVR 8 bit : j'ai \'ecrit le code pour 
+                supporter les p\'eriph\'eriques de base (CPU, timers) et 
+                impl\'ementer les capacit\'es de colmmunication (interfaces UART,
                 SPI),
 
-            \item Support de la puce radio Texas Instrument CC2420 qui équipe de 
+            \item Support de la puce radio Texas Instrument CC2420 qui \'equipe de 
                 nombreuses plateformes: Zolertia Z1, TelosB, WSN430. Ce travail a permis de
-                faire les expérimentations nécessaires pour l'écriture d'un article de 
-                recherche comparant les performances de RIOT avec d'autres systèmes
+                faire les exp\'erimentations n\'ecessaires pour l'\'ecriture d'un article de 
+                recherche comparant les performances de RIOT avec d'autres syst\`emes
                 d'exploitation similaires (Contiki\footnote{\url{http://contiki-os.org}},
                 OpenWSN, etc)
-            \item J'ai également contribué et intégré plusieurs correction de bogues, en
-                  particulier sur les plateformes AVR 8 bit. Ces contributions améliorent la
+            \item J'ai \'egalement contribu\'e et int\'egr\'e plusieurs correction de bogues, en
+                  particulier sur les plateformes AVR 8 bit. Ces contributions am\'eliorent la
                   performance de RIOT sur ces architectures et ouvrent la voie pour
                   supporter de nouvelles plateformes comme par exemple la carte Arduino UNO.
         \end{itemize}
 
-    \item[Revue de code :] Depuis le début de l'ADT, j'ai révisé et intégré dans la
+    \item[Revue de code :] Depuis le d\'ebut de l'ADT, j'ai r\'evis\'e et int\'egr\'e dans la
         branche principale de RIOT le code de plus de 60 "pull-requests" (PR).
         Voici les plus importantes :
         \begin{itemize}
             \item PR\#4725\footnote{\url{https://github.com/RIOT-OS/RIOT/pull/4725}} 
                 permettant de configurer un routeur de bordure ("Border
-                Router") avec un seul lien série (initialement, il fallait utiliser 2
-                liens série),
+                Router") avec un seul lien s\'erie (initialement, il fallait utiliser 2
+                liens s\'erie),
             \item PR\#5167\footnote{\url{https://github.com/RIOT-OS/RIOT/pull/5167}} 
-                qui a étendu le support de RIOT sur les noeuds A8-M3 de la
-                plateforme expérimentale IoT-LAB
+                qui a \'etendu le support de RIOT sur les noeuds A8-M3 de la
+                plateforme exp\'erimentale IoT-LAB
             \item PR\#5291\footnote{\url{https://github.com/RIOT-OS/RIOT/pull/5291}} 
                 ajoutant le support de la puce radio Texas Instrument CC2538
-            \item Plusieurs PR améliorant le support des microcontrôleurs Atmel AVR
-                ATMega, notamment utilisés sur les plateformes Arduino (Mega2560, Uno,
+            \item Plusieurs PR am\'eliorant le support des microcontr\^oleurs Atmel AVR
+                ATMega, notamment utilis\'es sur les plateformes Arduino (Mega2560, Uno,
                 DueMilanove)
-            \item Plusieurs PR liées à l'ajout du support du protocole de sécurisation du
-                transfert de données DTLS.
+            \item Plusieurs PR li\'ees \`a l'ajout du support du protocole de s\'ecurisation du
+                transfert de donn\'ees DTLS.
         \end{itemize}
     \item[Aspects communautaires:]
-        Au bout de quelques mois après le début de l'ADT, ma participation, mes
-        contributions et mon implication au projet RIOT étant très appréciées,
-        j'ai intégré l'équipe des mainteneurs officiels. Je suis donc désormais
-        autorisé à fusionner, après vérification, les contributions de la
-        communauté des développeurs dans la branche principale et je participe aux
-        décisions relatives à l'organisation du projet.
-        Depuis le début de l'ADT, je participe également aux sprints mensuels
-        appelés Hack'n'ACK et organisés par la communauté RIOT dans le but
-        d'avancer rapidement, à plusieurs, sur des développement en cours et à
-        accélérer l'intégration de PR en cours de vérification.\\
+        Au bout de quelques mois apr\`es le d\'ebut de l'ADT, ma participation, mes
+        contributions et mon implication au projet RIOT \'etant tr\`es appr\'eci\'ees,
+        j'ai int\'egr\'e l'\'equipe des mainteneurs officiels. Je suis donc d\'esormais
+        autoris\'e \`a� fusionner, apr\`es v\'erification, les contributions de la
+        communaut\'e des d\'eveloppeurs dans la branche principale et je participe aux
+        d\'ecisions relatives \`a� l'organisation du projet.
+        Depuis le d\'ebut de l'ADT, je participe \'egalement aux sprints mensuels
+        appel\'es Hack'n'ACK et organis\'es par la communaut\'e RIOT dans le but
+        d'avancer rapidement, \`a plusieurs, sur des d\'eveloppements en cours et \`a
+        acc\'el\'erer l'int\'egration de PR en cours de v\'erification.\\
 
-        De plus, j'ai aussi pris part très activement à l'organisation du RIOT
-        Summit\footnote{\url{http://summit.riot-os.org}}, qui a réuni les 14 et 
-        15 juillet à Berlin, plus de 100
-        développeurs, chercheurs et industriels du domaine de l'IoT.
-        J'ai contribué à l'écriture de l'article "The Future of IoT Software Must
-        be Updated"\cite{IOTSU}, illustrant les principaux défis de la mise à 
+        De plus, j'ai aussi pris part tr\`es activement \`a� l'organisation du RIOT
+        Summit\footnote{\url{http://summit.riot-os.org}}, qui a r\'euni les 14 et 
+        15 juillet \`a� Berlin, plus de 100
+        d\'eveloppeurs, chercheurs et industriels du domaine de l'IoT.
+        J'ai contribu\'e \`a� l'\'ecriture de l'article "The Future of IoT Software Must
+        be Updated"\cite{IOTSU}, illustrant les principaux d\'efis de la mise \`a� 
         jour logicielle,
-        et présenté lors d'un "workshop" organisé par l'IETF à Dublin (je croyais
-        que c'était à Berlin, quelle date?).\\
+        et pr\'esent\'e lors d'un "workshop" organis\'e par l'IETF \`a Dublin le 13 et 14 juin\\
 
-        Enfin, j'ai été responsable d'organiser la sortie en juillet de la version
-        2016.07 de RIOT. Ce rôle consistait à:
+        Enfin, j'ai \'et\'e responsable d'organiser la sortie en juillet de la version
+        2016.07 de RIOT. Ce r\^ole consistait \`a�:
         \begin{itemize}
-            \item trier les PRs prêtes ou quasiment prêtes pour faire partie de cette
-                version,
-            \item faire des vérification de PRs
-            \item accélérer l'intégration des nouveaux bogues qui pouvaient apparaître.
+            \item trier les PRs pr\^etes ou quasiment pr\^etes pour faire partie de cette version,
+            \item faire des v\'erification de PRs
+            \item acc\'el\'erer l'int\'egration des nouveaux bogues qui pouvaient appara\^itre.
         \end{itemize}
-        Voici quelques données concernant cette version:
+        Voici quelques donn\'ees concernant cette version:
         \begin{itemize}
-            \item 198 PR et contenant 325 "commits" ont été intégrées. 65 tickets
-                ("issues") ont ainsi été résolus,
-            \item 46 personnes ont contribué du code en 112 jours
-            \item 632 fichiers sources ont été modifiés ou ajoutés, représentant 19863
-                lignes insérées et 3682 lignes supprimées.
+            \item 198 PR et contenant 325 "commits" ont \'et\'e int\'egr\'ees. 65 tickets
+                ("issues") ont ainsi \'et\'e r\'esolus,
+            \item 46 personnes ont contribu\'e du code en 112 jours
+            \item 632 fichiers sources ont \'et\'e modifi\'es ou ajout\'es, repr\'esentant 19863
+                lignes ins\'er\'ees et 3682 lignes supprim\'ees.
         \end{itemize}
 \end{description}
 
 %\begin{notes}
-%  Travaux réalisés \texttt{pendant l'année en cours},
-%  relativement aux jalons et tâches prévus dans la planification initiale.
+%  Travaux r\'ealis\'es \texttt{pendant l'ann\'ee en cours},
+%  relativement aux jalons et t\`a�ches pr\'evus dans la planification initiale.
 %  \\
 
-%  \textit{Cette partie fait écho à la cinquième section de la demande d'ADT :
-%    \textbf{Mise en oeuvre prévisionnelle de l'ADT.}}
+%  \textit{Cette partie fait \'echo \`a� la cinqui\`eme section de la demande d'ADT :
+%    \textbf{Mise en oeuvre pr\'evisionnelle de l'ADT.}}
 %\end{notes}
 
 %%==============================================================================
 %%==============================================================================
 \section{Travaux restants / perspectives}
-Les perspectives pour la fin de cette année et la deuxième année de travail sont les suivantes:
+Les perspectives pour la fin de cette ann\'ee et la deuxi\`eme ann\'ee de travail sont les suivantes:
 \begin{enumerate}
-	\item Finalisation de la vérification du code pour la PR de TinyDTLS.
-	\item Rédaction d'un plan de travail pour le support du protocole MQTT.
-	\item Mise en oeuvre d'une plateforme de mise à jour des composants logiciels de RIOT dans le testbed IoT-Lab.
-	\item Continuer les tâches de révision de code, organisation et tous les activités au sein de la communauté RIOT.
+	\item Finalisation de la v\'erification du code pour la PR de TinyDTLS.
+	\item R\'edaction d'un plan de travail pour le support du protocole MQTT.
+	\item Mise en oeuvre d'une plateforme de mise \`a� jour des composants logiciels de RIOT dans le testbed IoT-Lab.
+	\item Continuer les t\^aches de r\'evision de code, organisation et tous les activit\'es au sein de la communaut\'e RIOT.
 \end{enumerate}
 
 %\begin{notes}
-%  Si l'année en cours est la première année de contrat :
-%  plan de travail \texttt{pour la deuxième année},
-%  relativement aux jalons et tâches prévus dans la planification initiale.
+%  Si l'ann\'ee en cours est la premi\`ere ann\'ee de contrat :
+%  plan de travail \texttt{pour la deuxi\`eme ann\'ee},
+%  relativement aux jalons et t\`a�ches pr\'evus dans la planification initiale.
 %  \\
 
-%  \textit{Cette partie fait écho à la quatrième section de la demande d'ADT :
-%    \textbf{Mise en oeuvre prévisionnelle de l'ADT.}}
+%  \textit{Cette partie fait \'echo \`a� la quatri\`eme section de la demande d'ADT :
+%    \textbf{Mise en oeuvre pr\'evisionnelle de l'ADT.}}
 %  \\
 
-%  Si l'année en cours est la deuxième année de contrat :
-%  adéquation des travaux réalisés \texttt{sur les deux années},
-%  relativement à la sortie prévue initialement et perspectives générales.
+%  Si l'ann\'ee en cours est la deuxi\`eme ann\'ee de contrat :
+%  ad\'equation des travaux r\'ealis\'es \texttt{sur les deux ann\'ees},
+%  relativement \`a� la sortie pr\'evue initialement et perspectives g\'en\'erales.
 %  \\
 
-%  \textit{Cette partie fait écho à la quatrième section de la demande d'ADT :
-%    \textbf{Sortie de l'ADT : positionnement après l'ADT.}}
+%  \textit{Cette partie fait \'echo \`a� la quatri\`eme section de la demande d'ADT :
+%    \textbf{Sortie de l'ADT : positionnement apr\`es l'ADT.}}
 
 %\end{notes}
 
 %%==============================================================================
 %%==============================================================================
 \section{Bilan}
-Jusqu'à ce jour, mes contributions dans l'ADT sont les suivantes:
+Jusqu'\`a� ce jour, mes contributions dans l'ADT sont les suivantes:
 
 \begin{itemize}
 	\item 19 commits / 3,536 ++ / 2,184 --
 	\item Participation dans l'organisation du RIOT Summit 2016.
 	\item 1 article scientifique.
-	\item Revue très active du code avec plus 60 PRs migrés.
+	\item Revue tr\`es active du code avec plus de 60 PRs migr\'es.
 \end{itemize}
 
 \subsection*{Bilan personnel}
-D'un point de vue personnel, je suis très satisfait de mon travail au sein de
-l'équipe INFINE où j'ai été très bien intégré. Les échanges virtuels, à travers
-la plateforme de développement GitHub, et personnels avec la communauté RIOT à
-Berlin ont été très enrichissants, tant au niveau professionnel, académique que
+D'un point de vue personnel, je suis tr\`es satisfait de mon travail au sein de
+l'\'equipe INFINE o\`u j'ai \'et\'e tr\`es bien int\'egr\'e. Les \'echanges virtuels, \`a� travers
+la plateforme de d\'eveloppement GitHub, et personnels avec la communaut\'e RIOT \`a�
+Berlin ont \'et\'e tr\`es enrichissants, tant au niveau professionnel, acad\'emique que
 personnel.
 
-La participation à l'IETF 96 et l'organisation du RIOT Summit 2016 m'ont aussi permis d'échanger plusieurs points de vue vis-à-vis du domaine de recherche de l'Internet des Objets, axe que je voudrais approfondir dans mes futures activités dans cette ADT.\\
+La participation \`a�l'IETF 96 et l'organisation du RIOT Summit 2016 m'ont aussi permis d'\'echanger plusieurs points de vue vis-\`a-vis du domaine de recherche de l'Internet des Objets, axe que je voudrais approfondir dans mes futures activit\'es dans cette ADT.\\
 
 Les lieux de travail et l'attention du personnel du CRI Saclay, en particulier
-le SED, m'ont aussi permis d'exploiter au maximum mes compétences et d'en
-développer de nouvelles en très peu de temps.
+le SED, m'ont aussi permis d'exploiter au maximum mes comp\'etences et d'en
+d\'evelopper de nouvelles en tr\`es peu de temps.
 
 
 %\begin{notes}
 %  Mesures de l'avancement de l'ADT,
-%  relativement à l'évaluation initialement proposée.
+%  relativement \`a� l'\'evaluation initialement propos\'ee.
 %  \\
 
-%  \textit{Cette partie fait écho à la septième section de la demande d'ADT :
-%    \textbf{Suivi et évaluation}}.
+%  \textit{Cette partie fait \'echo \`a� la septi\`eme section de la demande d'ADT :
+%    \textbf{Suivi et \'evaluation}}.
 %  \\
 
-%  Discussion sur le déroulement de l'ADT :
+%  Discussion sur le d\'eroulement de l'ADT :
 %  expression des besoins, changements survenus, retours de tests.
 %  \\
 
 %  Bilan personnel :
-%  apport de l'expérience à l'INRIA, compétences acquises ou développées.
+%  apport de l'exp\'erience \`a� l'INRIA, comp\'etences acquises ou d\'evelopp\'ees.
 
 %\end{notes}
 
@@ -340,7 +337,7 @@ développer de nouvelles en très peu de temps.
 
 %===============================================================================
 \subsection{Prise en main du logiciel}
-Liste de langages de développement utilisés :
+Liste de langages de d\'eveloppement utilis\'es :
 
 \begin{itemize}
 	\item C, C++
@@ -348,7 +345,7 @@ Liste de langages de développement utilisés :
 	\item Make\\
 \end{itemize}
 
-Liste de systèmes d'exploitation :
+Liste de syst\`emes d'exploitation :
 
 \begin{itemize}
 	\item Mac OSX El Capitan
@@ -364,23 +361,23 @@ Compilateurs :
 	\item LLVM (from Mac toolchains)\\
 \end{itemize}
 
-La description de l'architecture logiciel ainsi que les détails sur les dépendances se trouvent sur \url{https://github.com/RIOT-OS/RIOT} et \url{https://github.com/RIOT-OS/RIOT/wiki}
+La description de l'architecture logiciel ainsi que les d\'etails sur les d\'ependances se trouvent sur \url{https://github.com/RIOT-OS/RIOT} et \url{https://github.com/RIOT-OS/RIOT/wiki}
 
 %\begin{notes}
 
 %  \begin{itemize}
 
-%  \item Liste des langages de développement utilisés,
-%    systèmes d'exploitation cibles, compilateurs, livrables produits
+%  \item Liste des langages de d\'eveloppement utilis\'es,
+%    syst\`emes d'exploitation cibles, compilateurs, livrables produits
 
 %  \item Pointeur vers
-%    une description de l'architecture logicielle (différents composants),
-%    description des dépendances (licences, versions etc.)
+%    une description de l'architecture logicielle (diff\'erents composants),
+%    description des d\'ependances (licences, versions etc.)
 
 %  \item Localisation des sources, pointeur vers un guide de compilation,
-%    pointeur vers un guide d'exécution des tests,
+%    pointeur vers un guide d'ex\'ecution des tests,
 %    pointeur vers un guide d'extraction de la documentation de code,
-%    localisation du gestionnaire de suivi (bogues, fonctionnalités etc.)
+%    localisation du gestionnaire de suivi (bogues, fonctionnalit\'es etc.)
 
 %  \end{itemize}
 
@@ -397,13 +394,13 @@ Toute la documentation sur RIOT se trouve ici : \\
 
 %  \begin{itemize}
 
-%  \item Le manuel de référence
+%  \item Le manuel de r\'ef\'erence
 
 %  \item Le tutoriel
 
 %  \item Le manuel utilisateur
 
-%  \item Le manuel de maintenance pour le développeur
+%  \item Le manuel de maintenance pour le d\'eveloppeur
 
 %  \end{itemize}
 
@@ -429,7 +426,7 @@ Toute la documentation sur RIOT se trouve ici : \\
 %	\bibitem{deluge}Hui, Jonathan W., and David Culler. "The dynamic behavior of a data dissemination protocol for network programming at scale." Proceedings of the 2nd international conference on Embedded networked sensor systems. ACM, 2004.
 %	\bibitem{figaro}Mottola, Luca, Gian Pietro Picco, and Adil Amjad Sheikh. "FiGaRo: fine-grained software reconfiguration for wireless sensor networks." Wireless Sensor Networks. Springer Berlin Heidelberg, 2008. 286-304.
 	\bibitem{ICN-RIOT} "Information Centric Networking in the IoT: Experiments with NDN in the Wild" 
-	E. Baccelli, C. Mehlis, O. Hahm, T. C. Schmidt, and M. Wählisch ACM ICN, 2014.
+	E. Baccelli, C. Mehlis, O. Hahm, T. C. Schmidt, and M. W\"ahlisch ACM ICN, 2014.
 %	\bibitem{nxp-sec-ic} NXP, "A710x family: Secure authentication microcontroller", May 2016 \url{http://www.nxp.com/products/identification-and-security/authentication/secure-authentication-microcontroller:A710X_FAMILY}
 %	\bibitem{inf-sec-ic} Infineon Technologies AG, "OPTIGA TRUST P SLJ 52ACA", May 2016 \url{http://www.infineon.com/cms/en/product/productType.html?productType=5546d4624f205c9a014f6eec8c007b9a}
 \end{thebibliography} 
