@@ -42,17 +42,18 @@
 Cette ADT a été lancée dans le cadre du projet de développement d'un système
 d'exploitation pour l'internet des objets, RIOT.\\
 
+RIOT a commencé en 2013, mais historiquement il es basé sur des projets différents.
+Voici les dates les plus importantes :
+\begin{itemize}
+	\item 2008 - 2012 Les ancêtres de RIOT ont été développés pour des propos scientifiques (FireKernel, uKleos).
+	\item 2013 - 2016 Le nom "RIOT" apparaît et le code source a été déplace dans Github, la plupart de la pile réseau a été développé ainsi que l'OS tel quel.\\
+\end{itemize}
 
-Donner un peu d'historique => début du projet en 2013, etc
-
-Parler ici des partenaires: Inria, Université Libre de Berlin et Université de
-Hambourg
+A ce jour, RIOT compte avec plus de 100 développeurs partout dans le monde, et il est financé par 3 entités: INRIA, Freie Universität Berlin et Hochschule für Angewandte Wissenschaften Hamburg.
 
 Le code es disponible sur
 Github\footnote{\url{https://github.com/RIOT-OS/RIOT/}}, sous licence LGLPv2,
 qui permet à toute personne son utilisation, modification et distribution.
-
-Donner une estimation des contributeurs
 
 Le code est essentiellement écrit en C et il utilise l'outil
 Make pour la compilation. D'autres langages comme Python ou C++ sont également
@@ -101,8 +102,8 @@ En particulier, plusieurs thèmes sont explorés:
 \begin{itemize}
     \item Le développement de protocoles IP tolérant les coupures réseau des LLN (Low
 power and Lossy Networks),
-    \item Les réseaux ICN (Information Centric Networking)\cite{ICN_RIOT} dont le but est de
-traiter la localisation et la reproduction de contenu dans la réseau, sans
+    \item Les réseaux ICN (Information Centric Networking)\cite{ICN-RIOT} dont le but est de
+traiter la localisation et la reproduction de contenu dans la pile réseau, sans
 adressage IP,
     \item Le suivi des évolutions des protocoles de la pile réseau discutées à l'IETF
 (Internet Engineering Task Force)
@@ -110,9 +111,9 @@ adressage IP,
 
 Cette ADT doit aussi servir à intégrer les résultats de mes précédents travaux
 de recherches sur la mise jour de composants logiciels sur les dispositifs très
-contraints\cite{model-at-runtime}, en utilisant les protocoles réseaux sans fil de l'IoT (Internet
+contraints\cite{models-at-runtime}, en utilisant les protocoles réseaux sans fil de l'IoT (Internet
 Of Things), comme 802.15.4 ou LoRa (Long Range). On parle alors de mise-à-jour
-"Other the Air" (OTA).
+"Over the Air" (OTA).
 
 
 
@@ -121,7 +122,7 @@ Of Things), comme 802.15.4 ou LoRa (Long Range). On parle alors de mise-à-jour
 L'objectif principal de l'ADT est le développement et la maintenance du code de
 ce système d'exploitation ainsi que l'animation de sa communauté de
 développeurs.
-Plus précisément, ces objectifs sont les suivant:
+Plus précisément, ces objectifs sont les suivants :
 \begin{description}
     \item[Ajout de nouvelles plateformes :] RIOT supporte un grand nombre de
         plateformes
@@ -142,15 +143,15 @@ Plus précisément, ces objectifs sont les suivant:
     \item[Mise à jour des composants logiciels de RIOT :] La mise à jour d'un système
         d'exploitation et de ses composants logiciels est essentielle pour garantir sa
         sécurité, corriger des bogues ou intégrer de nouvelles fonctionnalités. Dans le
-        cas, d'un système embarqué IoT fortement contraint, ces mises à jour représente
-        encore un défi technique très complexe: les réseaux sans-fil sont peu fiables,
+        cas d'un système embarqué IoT fortement contraint, ces mises à jour représentent
+        encore un défi technique très complexe: les réseaux sans-fil sont peu fiables et très bas débit,
         les équipements n'ont pas d'interface utilisateur accessible à distance et
-        l'espace mémoire y est très limitée. (autres problèmes?)
+        l'espace mémoire y est très limitée.
 
     \item[Revue de Code :] La revue de code consiste à vérifier que le code écrit par les
         contributeurs de la communauté fonctionne correctement, n'introduit pas de
         régression et qu'il respecte les conventions établies par les mainteneurs du
-        projet. Les vérifications fonctionnelles s'effectue soit à distance dans un
+        projet. Les vérifications fonctionnelles s'effectuent soit à distance dans un
         environnement de test (appelé "testbed",  comme 
         IoT-LAB\footnote{\url{https://www.iot-lab.info}}) ou directement sur le matériel 
         pour lequel il a été développé.
